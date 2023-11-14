@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/rastrwin/static/css/main.42ca7b15.css",
+    "main.js": "/rastrwin/static/js/main.bb4e17e2.js",
+    "static/js/787.cda612ba.chunk.js": "/rastrwin/static/js/787.cda612ba.chunk.js",
+    "index.html": "/rastrwin/index.html",
+    "main.42ca7b15.css.map": "/rastrwin/static/css/main.42ca7b15.css.map",
+    "main.bb4e17e2.js.map": "/rastrwin/static/js/main.bb4e17e2.js.map",
+    "787.cda612ba.chunk.js.map": "/rastrwin/static/js/787.cda612ba.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.42ca7b15.css",
+    "static/js/main.bb4e17e2.js"
+  ]
+}
