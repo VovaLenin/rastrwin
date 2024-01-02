@@ -12,11 +12,12 @@ const PackedMatrix = ({ packedMatrix }) => {
     rows.push(<tr key={i}>{cells}</tr>);
   });
   return (
-    <div className="col">
-      <table className="table table-bordered table-sm w-auto">
+    <>
+      <h5 className="text-center">Упакованная матрица</h5>
+      <table className="table table-bordered table-sm w-auto m-auto mt-2">
         <tbody>{rows}</tbody>
       </table>
-    </div>
+    </>
   );
 };
 

@@ -20,3 +20,13 @@ td {
   min-width: 60px;
   text-align: center;
 }
+
+.text-center {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.matrix-container {
+  display: flex;
+  justify-content: space-around;
+}

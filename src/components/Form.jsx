@@ -7,6 +7,7 @@ import graphConnectivity from "../utils/graphConnectivity";
 import invertMatrix from "../utils/invertMatrix";
 import matrixPacking from "../utils/matrixPacking";
 import Navbar from "./Navbar";
+import unpacking from "../utils/unpacking";
 
 const Form = () => {
   const valuesMatrix = {
@@ -15,14 +16,8 @@ const Form = () => {
       ["2", "", "", "", "", "", "", "1", "1"],
       ["3", "", "", "", "", "", "", "1", "1"],
       ["4", "", "", "", "", "", "", "1", "1"],
-      ["5", "", "", "", "", "", "", "1", "1"],
     ],
-    branches: [
-      ["", "1", "2", "1", "1", "1"],
-      ["", "1", "3", "1", "1", "1"],
-      ["", "3", "4", "1", "1", "1"],
-      ["", "3", "5", "1", "1", "1"],
-    ],
+    branches: [["", "1", "2", "1", "1", "1"], ["", "2", "3", "1", "1", "1"],["", "3", "4", "1", "1", "1"]],
   };
   // const [valuesMatrix, setValuesMatrix] = useState(initialValues);
   const initialValues = 0;
@@ -73,6 +68,7 @@ const Form = () => {
   const invertY = invertMatrix(Y);
   const packedMatrix = matrixPacking(Y);
   console.log(packedMatrix);
+  console.log(unpacking(packedMatrix, 1, 1));
   return (
     <>
       <div className="container-fluid">
@@ -116,18 +112,19 @@ const Form = () => {
 
         {isGraphConnectivity ? (
           <>
-            <div сlassname="row justify-content-center">
-              <div className="col-12 justify-content-center">
+            <div className="matrix-container mt-2">
+              <div className="">
                 <DataGrid matrix={Y} title="Матрица проводимостей" />
               </div>
-
-              <DataGrid
-                matrix={invertY}
-                title="Обратная матрица проводимостей"
-              />
-            </div>
-            <div className="row justify-content-center">
-              <PackedMatrix packedMatrix={packedMatrix} />
+              <div className="">
+                <DataGrid
+                  matrix={invertY}
+                  title="Обратная матрица проводимостей"
+                />
+              </div>
+              <div className="">
+                <PackedMatrix packedMatrix={packedMatrix} />
+              </div>
             </div>
           </>
         ) : (

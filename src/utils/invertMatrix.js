@@ -1,3 +1,4 @@
+import roundValues from "./roundValues";
 const Complex = require("complex.js");
 
 export default function invertMatrix(matrix) {
@@ -28,5 +29,6 @@ export default function invertMatrix(matrix) {
     }
     YP = [...Z];
   }
-  return Z;
+  const Z1 = roundValues(Z, 3);
+  return Z1;
 }

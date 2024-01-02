@@ -9,7 +9,7 @@ const Navbar = ({ values, onClear, onSave, onLoad }) => {
       <>
         <div className="row justify-content-center">
           <div className="btn-group form-row  col-3 ">
-            <button className="btn btn-primary active btn-sm" onClick={onSave}>
+            <button className="btn btn-primary btn-sm" onClick={onSave}>
               Сохранить
             </button>
             <button className="btn btn-primary btn-sm" onClick={onClear}>

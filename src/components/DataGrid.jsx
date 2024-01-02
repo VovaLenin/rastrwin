@@ -21,7 +21,7 @@ const DataGrid = ({ matrix, title }) => {
   // Возвращаем таблицу
   return (
     <>
-      <h5 className="text-center">{title}</h5>
+      <h5 className="text-center mb-2">{title}</h5>
       <table className="table table-bordered table-sm w-auto m-auto">
         <tbody>{rows}</tbody>
       </table>

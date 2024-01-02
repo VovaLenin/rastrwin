@@ -1,3 +1,4 @@
+import roundValues from "./roundValues";
 const Complex = require("complex.js");
 
 function createMatrixY(isConnectivity, values) {
@@ -31,14 +32,15 @@ function createMatrixY(isConnectivity, values) {
       const X = Number(values.branches[i][4]);
       const K = Number(values.branches[i][5]);
       const Z = new Complex(R, X);
-      const KT = new Complex(K);
+      const KT = new Complex(K, 0);
       Y[NN - 1][NN - 1] = Y[NN - 1][NN - 1].add(Z.inverse());
       Y[NK - 1][NK - 1] = Y[NK - 1][NK - 1].add(Z.inverse().mul(KT.mul(KT)));
       Y[NN - 1][NK - 1] = Y[NN - 1][NK - 1].sub(Z.inverse().mul(KT));
       Y[NK - 1][NN - 1] = Y[NK - 1][NN - 1].sub(Z.inverse().mul(KT));
     }
-    console.log(Y);
-    return Y;
+    const Y1 = roundValues(Y, 3);
+    console.log(Y1);
+    return Y1;
   } else return null;
 }
 
